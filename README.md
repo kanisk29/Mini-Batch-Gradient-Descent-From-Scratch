@@ -39,48 +39,55 @@ class MBGDRegressor
 
 ---
 
-## Training Algorithm
+### Prediction
 
-For each epoch:
-
-1. Randomly sample a mini-batch
-2. Compute predictions
-
-[
+\[
 \hat{y} = Xw + b
-]
-
-3. Compute gradients
-
-Weight gradient:
-
-[
-\frac{-2}{n} (y - \hat{y})X
-]
-
-Bias gradient:
-
-[
--2 \cdot mean(y - \hat{y})
-]
-
-4. Update parameters
-
-[
-w = w - \eta \cdot gradient_w
-]
-
-[
-b = b - \eta \cdot gradient_b
-]
-
-Where:
-
-* (w) = weights
-* (b) = intercept
-* (\eta) = learning rate
+\]
 
 ---
+
+### Gradient Computation
+
+**Weight Gradient**
+
+\[
+\frac{-2}{n} X^T (y - \hat{y})
+\]
+
+**Bias Gradient**
+
+\[
+-2 \cdot \text{mean}(y - \hat{y})
+\]
+
+---
+
+### Parameter Updates
+
+**Weight Update**
+
+\[
+w = w - \eta \cdot \text{gradient}_w
+\]
+
+**Bias Update**
+
+\[
+b = b - \eta \cdot \text{gradient}_b
+\]
+
+---
+
+### Where
+
+- \(w\) = model weights (coefficients)  
+- \(b\) = intercept (bias term)  
+- \(X\) = feature matrix  
+- \(y\) = true target values  
+- \(\hat{y}\) = predicted values  
+- \(n\) = number of samples in the mini-batch  
+- \(\eta\) = learning rate
 
 ## Model Architecture
 
