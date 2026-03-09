@@ -39,56 +39,45 @@ class MBGDRegressor
 
 ---
 
-### Prediction
+## Prediction
 
-\[
-\hat{y} = Xw + b
-\]
+ŷ = Xw + b
 
 ---
 
-### Gradient Computation
+## Gradient Computation
 
-**Weight Gradient**
+### Weight Gradient
 
-\[
-\frac{-2}{n} X^T (y - \hat{y})
-\]
+(-2 / n) * Xᵀ (y − ŷ)
 
-**Bias Gradient**
+### Bias Gradient
 
-\[
--2 \cdot \text{mean}(y - \hat{y})
-\]
+-2 * mean(y − ŷ)
 
 ---
 
-### Parameter Updates
+## Parameter Updates
 
-**Weight Update**
+### Weight Update
 
-\[
-w = w - \eta \cdot \text{gradient}_w
-\]
+w = w − η * gradient_w
 
-**Bias Update**
+### Bias Update
 
-\[
-b = b - \eta \cdot \text{gradient}_b
-\]
+b = b − η * gradient_b
 
 ---
 
 ### Where
 
-- \(w\) = model weights (coefficients)  
-- \(b\) = intercept (bias term)  
-- \(X\) = feature matrix  
-- \(y\) = true target values  
-- \(\hat{y}\) = predicted values  
-- \(n\) = number of samples in the mini-batch  
-- \(\eta\) = learning rate
-
+- w = model weights  
+- b = intercept  
+- X = feature matrix  
+- y = actual values  
+- ŷ = predicted values  
+- n = batch size  
+- η = learning rate
 ## Model Architecture
 
 The regressor maintains two learnable parameters:
